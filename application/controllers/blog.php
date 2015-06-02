@@ -76,6 +76,9 @@ class Blog extends CI_Controller {
 		$this->load->view('admin/test');
 	}
 	
+	/**
+	 * 给视图添加动态数据
+	 */
 	public function postdata(){
 		$data = array(
 				'title' => 'My Title',
@@ -84,6 +87,18 @@ class Blog extends CI_Controller {
 		);
 		
 		$this->load->view('blogview', $data);
+	}
+	
+	/**
+	 * 创建循环
+	 */
+	public function loop(){
+		$data['todo_list'] = array('Clean House', 'Call Mom', 'Run Errands');
+		
+		$data['title'] = "My Real Title";
+		$data['heading'] = "My Real Heading";
+		
+		$this->load->view('loop', $data);
 	}
 	
 }
