@@ -27,7 +27,10 @@ class Blog extends CI_Controller {
 	public function _output($output)
 	{
 		echo $output;
-		echo '处理输出内容';
+		echo '处理输出的内容';
+		
+		//调用私有方法
+		$this->_utility();
 	}
 
 	/**
@@ -36,7 +39,7 @@ class Blog extends CI_Controller {
 	 */
 	private function _utility()
 	{
-		echo '私有方法';
+		echo '私有方法被调用';
 	}
 
 	public function index()
@@ -47,6 +50,30 @@ class Blog extends CI_Controller {
 	public function comments()
 	{
 		echo '看这里！';
+	}
+	
+	/**
+	 * 载入视图
+	 */
+	public function getview(){
+		
+		$this->load->view('blogview');
+	}
+	
+	/**
+	 * 载入多个视图
+	 */
+	public function someview(){
+		
+		$this->load->view('blogview');
+		$this->load->view('footer');
+	}
+	
+	/**
+	 * 用子文件夹存储视图
+	 */
+	public function subfolder(){
+		$this->load->view('admin/test');
 	}
 }
 
