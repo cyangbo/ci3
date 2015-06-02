@@ -101,6 +101,19 @@ class Blog extends CI_Controller {
 		$this->load->view('loop', $data);
 	}
 	
+	/**
+	 * 获取视图内容
+	 */
+	public function viewcontent(){
+		$data['todo_list'] = array('Clean House', 'Call Mom', 'Run Errands');
+		
+		$data['title'] = "My Real Title";
+		$data['heading'] = "My Real Heading";
+		
+		//视图内容不输出到浏览器,而是保存在变量$buffer中
+		$buffer = $this->load->view('loop', $data,true);
+	}
+	
 }
 
 
