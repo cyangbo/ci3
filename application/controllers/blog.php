@@ -75,6 +75,17 @@ class Blog extends CI_Controller {
 	public function subfolder(){
 		$this->load->view('admin/test');
 	}
+	
+	public function postdata(){
+		$data = array(
+				'title' => 'My Title',
+				'heading' => 'My Heading',
+				'message' => 'My Message'
+		);
+		
+		$this->load->view('blogview', $data);
+	}
+	
 }
 
 
