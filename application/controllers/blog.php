@@ -114,6 +114,20 @@ class Blog extends CI_Controller {
 		$buffer = $this->load->view('loop', $data,true);
 	}
 	
+	public function mylibrary(){
+		//libraries文件夹中的文件名,首字母不需要大写,不需要扩展名
+		$this->load->library('myclass');
+		
+		//调用myclass类的方法
+		$this->myclass->myfunction();
+		
+		//当初始化类库时，你可以通过第二个参数动态的传递数组到类的构造函数中去:
+		//$params = array('type' => 'large', 'color' => 'red');
+		//$this->load->library('Someclass', $params);
+		//当你使用这个特性时,你必须为类的构造函数加上参数:
+		
+	}
+	
 }
 
 
