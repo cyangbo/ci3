@@ -143,7 +143,20 @@ class Blog extends CI_Controller {
 	public function extend_email(){
 		$this->load->library('email');
 		$this->email->cc();
-	}	
+	}
+	
+	/**
+	 * 适配器
+	 */
+	public function getdriver(){	
+		
+		$this->load->driver('Driver_name');	
+		//调用适配器的方法
+		//$this->Driver_name->index();	
+		//调用适配器子类的方法
+		$this->Driver_name->Driver_name_subclass_1->childone();
+	}
+	
 }
 
 
