@@ -11,3 +11,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
+
+//定义钩子
