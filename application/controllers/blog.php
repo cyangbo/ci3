@@ -140,6 +140,10 @@ class Blog extends CI_Controller {
 		
 	}
 	
+	public function extend_email(){
+		$this->load->library('email');
+		$this->email->cc();
+	}	
 }
 
 
