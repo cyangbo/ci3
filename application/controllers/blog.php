@@ -128,6 +128,18 @@ class Blog extends CI_Controller {
 		
 	}
 	
+	/**
+	 * 邮件类重写
+	 */
+	public function overwrite_email(){
+		
+		//先载入libraries文件夹中的Email类,如果有就不载入system的Email类
+		$this->load->library('email');
+		//调用email类的方法
+		$this->email->myoverwrite();
+		
+	}
+	
 }
 
 
