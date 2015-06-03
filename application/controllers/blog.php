@@ -44,6 +44,10 @@ class Blog extends CI_Controller {
 
 	public function index()
 	{
+		/**
+		 * 激活分析器
+		 */
+		$this->output->enable_profiler(TRUE);
 		echo 'Hello World！';
 	}
 

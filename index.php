@@ -113,6 +113,14 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
+	/**
+	 * 可对项目目录进行重命名
+	 * 更改你的应用程序的文件夹路径:
+	 * 你可以将 application文件夹挪放到服务器的其他的位置。
+	 * 但是你还要在 index.php 文件里将$application_folder变量设置为服务器的全路径。
+	 * $application_folder = "/Path/to/your/application";
+	 * @var unknown
+	 */
 	$application_folder = 'application';		//项目目录
 
 /*
