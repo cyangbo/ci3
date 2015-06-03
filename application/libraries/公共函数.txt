@@ -1,0 +1,49 @@
+is_php('version_number')
+
+is_php() 判断正在使用的PHP的版本号是否高于你所提供的 version_number 。
+
+if (is_php('5.3.0'))
+{
+    $str = quoted_printable_encode($str);
+}
+如果已安装的PHP版本号等于或高于你所提供的版本号，本函数将返回布尔值 TRUE。如果安装的PHP版本号低于你所提供的那个版本号，本函数将返回 FALSE。
+
+is_really_writable('path/to/file')
+
+在Windows平台，is_writable()函数在实际没有文件写权限时也返回真。那是因为，只有文件有只读属性时，操作系统才向PHP报告为假。这个函数依靠对文件的先行写入来判断是否真的具有写权限。 通常情况下，只有在这个信息不可靠的平台上才推荐使用。
+
+注:此函数也可用于判断文件夹是否有可写权限。
+
+if (is_really_writable('file.txt'))
+{
+    echo "I could write to this if I wanted to";
+}
+else
+{
+    echo "File is not writable";
+}
+config_item('item_key')
+
+尽管使用config_item()函数能够取得单个配置信息，但是配置类是访问这些信息的优选方式。更多信息请见类库参考。
+
+注:此函数获取的是从config文件直接获取的值，无法取得配置类 set_item() 函数变更后的值。
+
+show_error('message'), show_404('page'), log_message('level', 'message')
+
+这些函数在错误处理中描述。
+
+set_status_header(code, 'text');
+
+允许你手动设置服务器状态头(header)。例如:
+
+set_status_header(401);
+// 将header设置为: Unauthorized
+单击这里 查看全部的header列表。
+
+remove_invisible_characters($str)
+
+这个函数能防止在ASCII字符之间插入空字符，如Java\0script.
+
+html_escape($mixed)
+
+利用此功能可以方便的使用htmlspecialchars()函数。它接受字符串和数组。有助于防止跨站脚本攻击（XSS）。
